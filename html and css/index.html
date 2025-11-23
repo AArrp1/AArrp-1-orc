@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Really Attractive Online Resume & CV</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Create a modern, printable resume with live preview, templates and PDF export. BCA Minor Project." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Icons (optional CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Really Attractive Resume & CV</h1>
+        <p class="subtitle">Build a professional resume — live preview · templates · PDF</p>
+      </div>
+      <nav class="header-actions">
+        <button id="fillSample" class="btn ghost">Fill Sample</button>
+        <button id="pdfBtn" class="btn primary">Export PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container wrap">
+    <!-- LEFT: Form -->
+    <section class="card form-card">
+      <h2>Resume Details</h2>
+
+      <form id="resumeForm" class="form" autocomplete="off" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="full_name">Full name</label>
+            <input id="full_name" name="full_name" type="text" placeholder="Arpit Tigga" required />
+          </div>
+          <div class="field narrow">
+            <label for="title">Job title</label>
+            <input id="title" name="title" type="text" placeholder="Frontend Developer" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="field narrow">
+            <label for="contact">Phone</label>
+            <input id="contact" name="contact" type="text" placeholder="+91 9XXXXXXXXX" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="City, State, Country" />
+        </div>
+
+        <div class="field">
+          <label for="summary">Professional summary</label>
+          <textarea id="summary" name="summary" rows="3" placeholder="Short summary about your skills and career"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="education">Education (one per line)</label>
+          <textarea id="education" name="education" rows="3" placeholder="BCA — XYZ College — 2024"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="experience">Experience (one per line)</label>
+          <textarea id="experience" name="experience" rows="3" placeholder="Role — Company — Year(s)"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="projects">Projects (one per line)</label>
+          <textarea id="projects" name="projects" rows="3" placeholder="Project title — short description"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="skills">Skills (comma separated)</label>
+          <input id="skills" name="skills" type="text" placeholder="HTML, CSS, JavaScript, React" />
+        </div>
+
+        <div class="form-row">
+          <div class="field narrow">
+            <label for="template">Template</label>
+            <select id="template" name="template">
+              <option value="modern">Modern</option>
+              <option value="classic">Classic</option>
+            </select>
+          </div>
+
+          <div class="field upload">
+            <label>Photo (optional)</label>
+            <div class="file-wrap">
+              <label id="photoLabel" class="file-btn" for="photoInput"><i class="fa fa-camera"></i> Upload photo</label>
+              <input id="photoInput" type="file" accept="image/*" style="display:none" />
+              <span id="photoName" class="muted small">No file chosen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions small-gap">
+          <button type="button" id="saveLocal" class="btn">Save Locally</button>
+          <button type="button" id="loadLocal" class="btn ghost">Load</button>
+          <button type="button" id="clearLocal" class="btn ghost">Clear</button>
+          <button type="button" id="exportJSON" class="btn ghost">Export JSON</button>
+          <input id="importFile" type="file" accept=".json" style="display:none" />
+          <button type="button" id="importJSON" class="btn ghost">Import JSON</button>
+        </div>
+
+        <p class="muted note">Tip: Use Save/Load while editing. Use Export JSON to share or backup your resume data.</p>
+      </form>
+    </section>
+
+    <!-- RIGHT: Preview -->
+    <aside class="card preview-card">
+      <div id="preview" class="preview modern" aria-live="polite">
+        <!-- generated preview -->
+      </div>
+
+      <div class="preview-controls">
+        <label class="muted">Preview template:</label>
+        <select id="previewTemplate">
+          <option value="modern">Modern</option>
+          <option value="classic">Classic</option>
+        </select>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Really Attractive Resume & CV — BCA Minor Project • Team: Arpit, Prashant, Piyush</small>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
